@@ -1,0 +1,22 @@
+{
+  "src": {
+    "spec": [
+      "src/**/*.spec.js"
+    ],
+    "js": [
+      "src/app.config.js",
+      "src/app.routes.js",
+      "src/components/**/*.js",
+      "src/shared/**/*.js",
+      "!src/**/*.spec.js"
+    ],
+    "tpl": [
+      "src/**/*.tpl.html",
+      "src/**/*.tpl.html"
+    ],
+    "index": "src/index.html",
+    "css": "src/assets/**/*.css",
+    "assets": "src/assets/**/*.*"
+  },
+  "mode": "release"
+}

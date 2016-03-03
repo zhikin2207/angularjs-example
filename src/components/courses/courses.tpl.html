@@ -1,0 +1,50 @@
+<div class="form-group form-inline">
+	<input type="text" placeholder="Search" class="form-control" ng-model="coursesVm.searchInput"/>
+	<button ng-click="coursesVm.applySearchFilter(coursesVm.searchInput)" class="btn btn-success">Search</button>
+	<a ui-sref="courses.new" class="btn btn-primary pull-right">Add course</a>
+</div>
+
+<hr/>
+
+<div class="form-group panel panel-default" ng-repeat="course in coursesVm.courses | searchCourse:coursesVm.search">
+	<div class="panel-body">
+		<div class="col-md-10">
+			<div class="row">
+				<h3 class="col-md-10">
+					{{ course.title }}
+					<small> {{ course.duration | minutesToHours }}</small>
+				</h3>
+				<div class="col-md-2">
+					<strong>{{ course.date }}</strong>
+				</div>
+			</div>
+			<div class="row">
+				<p>{{ course.description }}</p>
+				<p>
+					Authors: <strong ng-repeat="author in course.authors"> {{ author.firstName }} {{ author.lastName }} {{ $last ? '' : ', ' }}</strong>
+				</p>
+			</div>
+		</div>
+		<div class="col-md-2">
+			<div class="form-group">
+				<a ui-sref="courses.edit({id: course.id})" class="btn btn-default form-control">Edit</a>
+			</div>
+			<div class="form-group">
+				<button ng-click="coursesVm.removeCourse($index)" class="btn btn-danger form-control">Remove</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script type="text/ng-template" id="removeConfirmation.html">
+	<div class="modal-header">
+		<h3 class="modal-title">Confirm removal</h3>
+	</div>
+	<div class="modal-body">
+		Do you really want to delete {{ modalVm.course.title }}?
+	</div>
+	<div class="modal-footer">
+		<button class="btn btn-primary" type="button" ng-click="modalVm.ok()">OK</button>
+		<button class="btn btn-warning" type="button" ng-click="modalVm.cancel()">Cancel</button>
+	</div>
+</script>

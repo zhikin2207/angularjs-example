@@ -1,0 +1,22 @@
+body {
+    padding: 60px 0;
+}
+
+.form input.ng-invalid.ng-touched {
+    border: 1px solid #b94a48;
+}
+
+.form input.ng-valid.ng-touched {
+    border: 1px solid #5fb05f;
+}
+
+.logo {
+    width: 70px;
+    height: 60px;
+    float: left;
+    margin: 0 10px;
+}
+
+footer {
+    text-align: center;
+}

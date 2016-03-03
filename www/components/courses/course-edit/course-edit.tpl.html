@@ -1,0 +1,69 @@
+<form class="form-horizontal" name="courseVm.form" ng-submit="courseVm.save()" novalidate>
+	<!-- Course title -->
+	<div class="form-group row">
+		<div class="col-md-3 text-right">
+			<label class="control-label" for="v1">Title</label>
+		</div>
+		<div class="col-md-9">
+            <input type="text" ng-model="courseVm.course.title" id="v1" class="form-control" required/>
+		</div>
+	</div>
+
+	<!-- Course description -->
+	<div class="form-group row">
+		<div class="col-md-3 text-right">
+			<label class="control-label" for="v2">Description</label>
+		</div>
+		<div class="col-md-9">
+            <textarea ng-model="courseVm.course.description" id="v2" class="form-control" required></textarea>
+		</div>
+	</div>
+
+	<!-- Course date of conduction -->
+	<div class="form-group row">
+		<div class="col-md-3 text-right">
+			<label class="control-label" for="v3">Date of conduction</label>
+		</div>
+		<div class="col-md-9">
+            <input id="v3" type="text" data-date-validation class="form-control" ng-model="courseVm.course.date" pattern="\d\d\.\d\d\.\d\d\d\d"/>
+		</div>
+	</div>
+
+	<!-- Course duration -->
+	<div class="form-group row">
+		<div class="col-md-3 text-right">
+			<label class="control-label">Duration</label>
+		</div>
+        <div class="col-md-9 form-inline" duration-converter duration="courseVm.course.duration">
+        </div>
+	</div>
+
+	<!-- Course authors -->
+	<div class="form-group row">
+		<div class="col-md-3 text-right">
+			<label class="control-label">Authors</label>
+		</div>
+		<div class="col-md-9" authors-selector course-authors="courseVm.course.authors" all-authors="courseVm.authors">
+		</div>
+	</div>
+
+	<!-- Control buttons -->
+	<div class="form-group row">
+		<div class="col-md-3 col-md-offset-3">
+			<button class="btn btn-success">Save</button>
+			<button type="button" class="btn btn-default" ng-click="courseVm.cancel()">Cancel</button>
+		</div>
+	</div>
+</form>
+
+<script type="text/ng-template" id="validationDialog.html">
+	<div class="modal-header">
+		<h3 class="modal-title">Please, check your input</h3>
+	</div>
+	<div class="modal-body">
+		Your form may contain some mistakes. Please, make sure that you have entered all fields.
+	</div>
+	<div class="modal-footer">
+		<button class="btn btn-warning" type="button" ng-click="$close()">Ok</button>
+	</div>
+</script>

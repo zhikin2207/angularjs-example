@@ -1,0 +1,64 @@
+{
+  "name": "angularjs-dmytro-zhykin",
+  "description": "AngularJS Video Portal",
+  "main": "gulpfile.js",
+  "authors": [
+    "Dmytro Zhykin"
+  ],
+  "license": "ISC",
+  "moduleType": [],
+  "homepage": "",
+  "private": true,
+  "dependencies": {
+    "jquery": "~2.1.4",
+    "bootstrap": "~3.3.5",
+    "angular": "~1.4.7",
+    "angular-bootstrap": "angular-ui-bootstrap-bower#~0.14.3",
+    "angular-ui-router": "~0.2.15",
+    "angular-resource": "~1.4.7",
+    "angular-cookies": "~1.4.7",
+    "angular-mocks": "~1.4.7"
+  },
+  "overrides": {
+    "jquery": {
+      "main": [
+        "dist/jquery.min.js"
+      ]
+    },
+    "bootstrap": {
+      "main": [
+        "dist/css/bootstrap.min.css",
+        "dist/css/bootstrap-theme.min.css",
+        "dist/js/bootstrap.min.js"
+      ]
+    },
+    "angular": {
+      "main": [
+        "angular.min.js"
+      ]
+    },
+    "angular-bootstrap": {
+      "main": [
+        "ui-bootstrap-tpls.min.js"
+      ]
+    },
+    "angular-ui-router": {
+      "main": [
+        "release/angular-ui-router.min.js"
+      ]
+    },
+    "angular-resource": {
+      "main": [
+        "angular-resource.min.js"
+      ]
+    },
+    "angular-cookies": {
+      "main": [
+        "angular-cookies.min.js"
+      ]
+    },
+    "angular-mocks": {
+      "main": []
+    }
+  }
+}

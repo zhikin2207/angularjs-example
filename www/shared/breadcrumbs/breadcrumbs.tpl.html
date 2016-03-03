@@ -1,0 +1,7 @@
+<ol class="breadcrumb">
+	<li ng-repeat="breadcrumb in breadcrumbs">
+		<a ng-if="!$last" ui-sref="{{ breadcrumb.state }}">{{ breadcrumb.label }}</a>
+		<span class="active" ng-show="$last">{{ breadcrumb.label }}</span>
+		<span ng-hide="$last" class="divider"></span>
+	</li>
+</ol>

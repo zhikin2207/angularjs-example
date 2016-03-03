@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="VideoPortalApp">
+	<head>
+		<meta charset="UTF-8">
+		<title>Video Portal</title>
+
+		<!-- bower:css -->
+		<link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css">
+		<link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap-theme.min.css">
+		<!-- endinject -->
+
+		<!-- inject:css -->
+		<link rel="stylesheet" href="/www/assets/style.min.css">
+		<!-- endinject -->
+	</head>
+	<body ng-controller="Main as main">
+		<div class="container">
+            <header ng-cloak>
+				<div class="row">
+					<!-- Title panel -->
+					<div class="col-md-5">
+						<img ng-src="assets/images/logo.png" alt="video catalog logo" class="logo"/>
+						<h1>Video Portal</h1>
+					</div>
+
+					<!-- Breadcrumbs -->
+					<div class="col-md-4" breadcrumbs="main.breadcrumbs"></div>
+
+					<!-- Auth info panel -->
+					<div class="col-md-3" ng-show="main.authData.userAuthenticated">
+						<span class="pull-right">Current user: <strong>{{ main.authData.user.username }}</strong></span><br/>
+						<a class="btn btn-default pull-right" ng-click="main.signOut()">Sign Out</a>
+					</div>
+				</div>
+			</header>
+
+			<hr/>
+
+			<div ui-view></div>
+
+			<footer>
+				All rights reserved by nobody.
+			</footer>
+		</div>
+
+		<!-- bower:js -->
+		<script src="/bower_components/jquery/dist/jquery.min.js"></script>
+		<script src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+		<script src="/bower_components/angular/angular.min.js"></script>
+		<script src="/bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+		<script src="/bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+		<script src="/bower_components/angular-resource/angular-resource.min.js"></script>
+		<script src="/bower_components/angular-cookies/angular-cookies.min.js"></script>
+		<!-- endinject -->
+
+		<!-- inject:js -->
+		<script src="/www/build/all.min.js"></script>
+		<!-- endinject -->
+	</body>
+</html>

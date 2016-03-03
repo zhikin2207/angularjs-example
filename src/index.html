@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="VideoPortalApp">
+	<head>
+		<meta charset="UTF-8">
+		<title>Video Portal</title>
+
+		<!-- bower:css -->
+		<!-- endinject -->
+
+		<!-- inject:css -->
+		<!-- endinject -->
+	</head>
+	<body ng-controller="Main as main">
+		<div class="container">
+            <header ng-cloak>
+				<div class="row">
+					<!-- Title panel -->
+					<div class="col-md-5">
+						<img ng-src="assets/images/logo.png" alt="video catalog logo" class="logo"/>
+						<h1>Video Portal</h1>
+					</div>
+
+					<!-- Breadcrumbs -->
+					<div class="col-md-4" breadcrumbs="main.breadcrumbs"></div>
+
+					<!-- Auth info panel -->
+					<div class="col-md-3" ng-show="main.authData.userAuthenticated">
+						<span class="pull-right">Current user: <strong>{{ main.authData.user.username }}</strong></span><br/>
+						<a class="btn btn-default pull-right" ng-click="main.signOut()">Sign Out</a>
+					</div>
+				</div>
+			</header>
+
+			<hr/>
+
+			<div ui-view></div>
+
+			<footer>
+				All rights reserved by nobody.
+			</footer>
+		</div>
+
+		<!-- bower:js -->
+		<!-- endinject -->
+
+		<!-- inject:js -->
+		<!-- endinject -->
+	</body>
+</html>

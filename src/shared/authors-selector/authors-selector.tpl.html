@@ -1,0 +1,24 @@
+<div class="col-md-5">
+	<label>Course authors:</label>
+	<select class="form-control" ng-model="vm.selectedCourseAuthors" multiple>
+		<option ng-repeat="author in vm.courseAuthors" value="{{ author.id }}">
+			{{ author.lastName }} {{ author.firstName }}
+		</option>
+	</select>
+</div>
+<div class="col-md-2">
+	<div class="form-group">
+		<button type="button" class="btn btn-default form-control" ng-click="vm.removeAuthors(vm.selectedCourseAuthors)">></button>
+	</div>
+	<div class="form-group">
+		<button type="button" class="btn btn-default form-control" ng-click="vm.addAuthors(vm.selectedAllAuthors)"><</button>
+	</div>
+</div>
+<div class="col-md-5">
+	<label>All authors:</label>
+	<select class="form-control" ng-model="vm.selectedAllAuthors" multiple>
+		<option ng-repeat="author in vm.allAuthors" value="{{ author.id }}">
+			{{ author.lastName }} {{ author.firstName }}
+		</option>
+	</select>
+</div>
