@@ -10,7 +10,7 @@
 	<div class="panel-body">
 		<div class="col-md-10">
 			<div class="row">
-				<h3 class="col-md-10">
+				<h3 class="col-md-10" data-course-title>
 					{{ course.title }}
 					<small> {{ course.duration | minutesToHours }}</small>
 				</h3>
@@ -21,7 +21,7 @@
 			<div class="row">
 				<p>{{ course.description }}</p>
 				<p>
-					Authors: <strong ng-repeat="author in course.authors"> {{ author.firstName }} {{ author.lastName }} {{ $last ? '' : ', ' }}</strong>
+					Authors: <strong ng-repeat="author in course.authors" data-author> {{ author.firstName }} {{ author.lastName }} {{ $last ? '' : ', ' }}</strong>
 				</p>
 			</div>
 		</div>
