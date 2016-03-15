@@ -5,7 +5,7 @@
 			<label class="control-label" for="v1">Title</label>
 		</div>
 		<div class="col-md-9">
-            <input type="text" ng-model="courseVm.course.title" id="v1" class="form-control" data-course-title required/>
+            <input type="text" ng-model="courseVm.course.title" id="v1" class="form-control" data-title required/>
 		</div>
 	</div>
 
@@ -15,7 +15,7 @@
 			<label class="control-label" for="v2">Description</label>
 		</div>
 		<div class="col-md-9">
-            <textarea ng-model="courseVm.course.description" id="v2" class="form-control" data-course-description required></textarea>
+            <textarea ng-model="courseVm.course.description" id="v2" class="form-control" data-description required></textarea>
 		</div>
 	</div>
 
@@ -25,7 +25,7 @@
 			<label class="control-label" for="v3">Date of conduction</label>
 		</div>
 		<div class="col-md-9">
-            <input id="v3" type="text" data-date-validation class="form-control" ng-model="courseVm.course.date" data-course-date pattern="\d\d\.\d\d\.\d\d\d\d"/>
+            <input id="v3" type="text" data-date-validation class="form-control" ng-model="courseVm.course.date" data-date pattern="\d\d\.\d\d\.\d\d\d\d"/>
 		</div>
 	</div>
 
@@ -34,7 +34,7 @@
 		<div class="col-md-3 text-right">
 			<label class="control-label">Duration</label>
 		</div>
-        <div class="col-md-9 form-inline" duration-converter duration="courseVm.course.duration" data-course-duration>
+        <div class="col-md-9 form-inline" duration-converter duration="courseVm.course.duration">
         </div>
 	</div>
 
